@@ -1,0 +1,61 @@
+basePath: /
+definitions:
+  model.User:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Esta es una API simple de usuarios utilizando Gin y Swagger
+  title: API de Usuarios con Gin
+  version: "1.0"
+paths:
+  /users:
+    get:
+      description: Retorna todos los usuarios registrados
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.User'
+            type: array
+      summary: Obtiene la lista de usuarios
+      tags:
+      - Usuarios
+    post:
+      consumes:
+      - application/json
+      description: Recibe un JSON con los datos del usuario y lo agrega a la lista
+      parameters:
+      - description: Datos del usuario
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.User'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Crea un usuario
+      tags:
+      - Usuarios
+swagger: "2.0"
