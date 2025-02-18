@@ -6,7 +6,7 @@ Este es un proyecto de ejemplo que demuestra cómo construir una API RESTful en 
 
 La API permite realizar operaciones básicas de CRUD (Crear, Leer) sobre una lista de usuarios. Está construida utilizando:
 - **Gin**: Un framework web en Go que ofrece alto rendimiento y facilidad de uso.
-- **Swagger**: Una herramienta para documentar y explorar APIs de manera interactiva.
+- **Swagger**: Una herramienta para documentar y explorar APIs.
 
 ## Prueba de endpoints
 
